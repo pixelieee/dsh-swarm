@@ -1,8 +1,10 @@
 # dsh-swarm
 
-**A playbook for running an agent team in DeepSeek Harness: one lead agent, a swarm of subagents, evidence-based verification, and frequent reporting.**
+**A supervised agent-swarm pattern for DeepSeek Harness: one lead agent, a swarm of subagents, evidence-based verification, and frequent reporting.**
 
 > The name is a nod to OpenAI Swarm — here the swarm is *supervised*: a lead agent triages, delegates, verifies, and reports; subagents execute.
+
+It ships a working skill, not just advice: install `skills/team-leader-mode/SKILL.md`, and the main agent becomes a lead that only triages, delegates, verifies, and reports.
 
 Most agent frameworks optimize for a single agent doing more. This repository is about the other axis: **how to run many agents in parallel without losing the user's attention or trust**.
 
