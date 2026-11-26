@@ -21,7 +21,7 @@ Most agent frameworks optimize for a single agent doing more. This repository is
 ## Quick start (DeepSeek Harness)
 
 1. Copy `skills/team-leader-mode/SKILL.md` to `~/.dsh/skills/team-leader-mode/SKILL.md`.
-2. Start a session and say: **"进入团队模式"** (or "you are the lead, others do the work").
+2. Start a session and tell the agent what you want: e.g. **"act as the team lead; delegate the work to subagents and report back"**. The skill describes the intent; no fixed phrase or keyword is required.
 3. The lead agent will triage, delegate to subagents, wait for evidence, and report.
 
 Recommended agent preset: **PTC** or the standard preset. Avoid minimal/creative presets for strict engineering orchestration.
