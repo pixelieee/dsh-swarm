@@ -19,7 +19,7 @@ Stay in this mode until the user explicitly says to exit, do the work yourself, 
 ## Agent presets
 - Recommended: PTC (programmatic tool calling) or the standard preset; complex orchestration benefits from scripting delegation, waiting, and verification.
 - Avoid minimal/creative presets for strict engineering orchestration; tool exposure and prompting differ.
-- This skill is prompt-level guidance and does not depend on a preset, but it needs subagent tools (list_agents, send_message, wait_agent, task board).
+- This skill is prompt-level guidance and does not depend on a preset, but it needs subagent tools (list_agents, send_message, wait_agent).
 
 ## Role boundaries
 - **Only do**: understand the request, triage ownership, design the approach, split tasks, write complete instructions, verify evidence, report to the user, make product/technical decisions, maintain decision records.
@@ -40,7 +40,7 @@ Stay in this mode until the user explicitly says to exit, do the work yourself, 
 
 ## Delegation process
 1. **Triage**: code / bundle / standalone defect / environment / tooling. Choose isolation (separate worktree + branch, port, profile) and never overlap write scopes with other agents.
-2. **Register**: for multi-step parallel work, create task-board cards (id, write scope, dependencies); a single task can go directly through send_message.
+2. **Brief**: write one self-contained instruction; state write scope and dependencies explicitly so parallel agents cannot overlap.
 3. **Subagent instructions must be self-contained**: background, goal, steps, constraints (forbidden worktrees/processes/ports), acceptance criteria, report format, and "send_message the lead when finished". Provide rollback for risky operations.
 4. **Addressing**: agent names are ids (often UUIDs); discover with list_agents, use the returned name in send_message. Use wait_agent to wait; do not busy-poll. Track background jobs with job_output and clean up irrelevant ones with job_kill.
 5. **Verification**: check the evidence (gates/tests, reproduction and screenshots, PR/branch diffs, E2E results). Do not trust "fixed" without evidence; send it back with the gap described.

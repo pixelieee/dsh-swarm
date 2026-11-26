@@ -13,10 +13,17 @@ Most agent frameworks optimize for a single agent doing more. This repository is
 | Path | What it is |
 |---|---|
 | `skills/team-leader-mode/SKILL.md` | A DSH personal skill that turns the main agent into a lead: it only talks, decides, delegates and verifies. |
-| `docs/01-how-it-works.md` | The mechanism: skill + DSH primitives (subagents, async messages, `wait_agent`, task board, background jobs). |
+| `docs/01-how-it-works.md` | The mechanism: skill + DSH primitives (subagents, async messages, `wait_agent`, background jobs). |
 | `docs/02-vs-superagent.md` | How this pattern differs from event-driven autonomous agents (e.g. DeepSeek's `dsh-superagent-prototype`). |
 | `docs/03-mid-work-replies.md` | Why agents go silent mid-work, and what actually fixes it (prompting + turn design, not model capability). |
 | `docs/04-pr-and-evidence-discipline.md` | Rules for stacked PRs, evidence-based acceptance, audit documents, and decision records. |
+
+## Requirements & compatibility
+
+- DeepSeek Harness with personal skills support (`~/.dsh/skills`).
+- Subagent tools: `list_agents`, `send_message`, `wait_agent` (tested with `@deepseek-ai/dsh-subagent-codex 0.2.2-rc.1`).
+- Recommended agent presets: **PTC** or the standard preset; avoid minimal/creative for strict engineering orchestration.
+- The skill is plain text and is not pinned to a DSH version. If subagent tools are unavailable, the pattern degrades to a normal single-agent session; if a helper tool is missing, adjust the skill locally.
 
 ## Quick start (DeepSeek Harness)
 

@@ -7,7 +7,7 @@ The pattern is **not a plugin**. It is a personal **skill** plus DSH's built-in 
 | Layer | Responsibility |
 |---|---|
 | Skill (`team-leader-mode`) | Behaviour: when to switch, role boundaries, delegation template, reporting cadence, verification, stop/correct rules. |
-| DSH runtime | Subagent sessions with independent context, shared filesystem, async messages, completion notifications, `wait_agent`, task board, background jobs, sandbox. |
+| DSH runtime | Subagent sessions with independent context, shared filesystem, async messages, completion notifications, `wait_agent`, background jobs, sandbox. |
 | Lead agent | Keeps short turns: triage → delegate → wait → verify → report → decide. |
 
 ## The loop
